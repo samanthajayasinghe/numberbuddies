@@ -9,18 +9,24 @@ class NumberBuddyMapper extends DbMapper
 
     /**
      * @param Number $number
+     * @return bool
      */
     public function create(Number $number)
     {
         $sql = "INSERT INTO number_buddy(number_value,buddy_list) VALUES( :number,:buddies)";
 
         $statement = $this->getPdo()->prepare($sql);
-        $statement->execute([':number' => $number->getValue(), ':buddies' => json_encode($number->getBuddies())]);
+        $bindParams = [
+            ':number' => $number->getValue(),
+            ':buddies' => json_encode($number->getBuddies())
+        ];
+        return $statement->execute($bindParams);
 
     }
 
     /**
      * @param Number $number
+     * @return bool|mixed
      */
     public function readByNumber(Number $number)
     {
