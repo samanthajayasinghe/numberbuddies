@@ -25,3 +25,5 @@ CREATE TABLE user_number (
   CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES user(id),
   CONSTRAINT fk_buddy_id FOREIGN KEY (buddy_id) REFERENCES number_buddy(id)
 ) engine=innodb default charset=utf8;
+
+insert into user(name) values('samantha');
