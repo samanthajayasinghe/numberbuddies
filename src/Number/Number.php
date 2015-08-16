@@ -9,6 +9,10 @@ class Number {
      */
     private $value = 0;
 
+    /**
+     * @var array
+     */
+    private $buddies = [];
 
     /**
      * @param $value
@@ -52,4 +56,21 @@ class Number {
         $this->value = $value;
         return $this;
     }
+
+    /**
+     * @return array
+     */
+    public function getBuddies()
+    {
+        return $this->buddies;
+    }/**
+     * @param array $buddies
+     * @return $this;
+     */
+    public function setBuddies($buddies)
+    {
+        $this->buddies = $buddies;
+        return $this;
+    }
+
 } 

@@ -14,6 +14,7 @@
         "php": ">=5.2.1"
     },
     "autoload": {
+        "files": ["config.php"],
         "psr-0": {
             "": "src/"
         }

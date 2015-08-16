@@ -8,7 +8,7 @@ use Number\BuddyPattern\MultiplyThree;
 use Number\BuddyPattern\MultiplyThreeAndFive;
 use Number\Number;
 
-class BuddyService
+class BuddyComputeService
 {
     /**
      * @var MultiplyThree

@@ -1,15 +1,15 @@
 <?php
 
 use Number\Number;
-use Service\BuddyService;
+use Service\BuddyComputeService;
 
-class BuddyServiceTest extends PHPUnit_Framework_TestCase{
+class BuddyComputeServiceTest extends PHPUnit_Framework_TestCase{
 
     private $buddyService = null;
 
     public  function setup()
     {
-        $this->buddyService = new BuddyService();
+        $this->buddyService = new BuddyComputeService();
     }
     public function testGenerateBuddy()
     {
