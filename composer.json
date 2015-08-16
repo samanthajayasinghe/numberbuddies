@@ -1,0 +1,21 @@
+{
+    "name": "samanthajayasinghe/numberbuddies",
+    "type": "application",
+    "description": "Generate Number Buddies",
+    "keywords": ["Number","Number Buddies"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Samantha Jayasinghe",
+            "email": "isamantha@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}
