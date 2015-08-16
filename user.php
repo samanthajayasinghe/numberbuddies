@@ -9,10 +9,15 @@ use Service\UserService;
 
 if (isset($_REQUEST['number'])) {
 
-    $userService = new UserService();
+    try{
+        $userService = new UserService();
 
-    if ($userService->saveBuddyNumber($_REQUEST['number'], $_SESSION['userId'])) {
-        echo "Generate Successfully";
+        if ($userService->saveBuddyNumber($_REQUEST['number'], $_SESSION['userId'])) {
+            echo "Generate Successfully";
+        }
+    }catch (Exception $e){
+        echo $e->getMessage();
     }
+
 }
 

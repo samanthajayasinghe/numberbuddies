@@ -41,4 +41,14 @@ class UserNumberMapper extends DbMapper
 
         return $query->fetchAll();
     }
+
+    public function checkUserBuddy($userId, $number, $buddy)
+    {
+        $sql = "SELECT * FROM
+                  user_number u,number_buddy n
+                  WHERE u.buddy_id = n.id AND u.user_id = ? AND n.number_value= ? AND buddy_list RLIKE ?";
+        $query = $this->getPdo()->prepare($sql);
+        $query->execute([$userId, $number, $buddy]);
+        return $query->rowCount();
+    }
 } 

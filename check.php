@@ -10,9 +10,21 @@ use Service\UserService;
 
 if (isset($_REQUEST['number']) && isset($_REQUEST['buddy'])) {
 
-    $userService = new UserService();
+    try{
+        $userService = new UserService();
 
-    if ($userService->saveBuddyNumber($_REQUEST['number'], $_SESSION['userId'])) {
-        echo "Generate Successfully";
+        $isExists = $userService->checkUserBuddy(
+            $_SESSION['userId'],
+            $_REQUEST['number'],
+            $_REQUEST['buddy']
+        );
+
+        if ($isExists) {
+            echo "Combination Exists";
+        }else{
+            echo "Combination Not Exists";
+        }
+    }catch (Exception $e){
+        echo $e->getMessage();
     }
 }

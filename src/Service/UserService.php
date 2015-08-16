@@ -11,11 +11,15 @@ use \PDO;
 class UserService
 {
 
+    /**
+     * @param $value
+     * @param $userId
+     * @return bool
+     * @throws \Exception
+     */
     public function saveBuddyNumber($value, $userId)
     {
-        if (empty($userId) || (int)$userId <= 0) {
-            throw new \Exception("Invalid User");
-        }
+
         $number = new Number($value);
         $computeService = new BuddyComputeService();
 
@@ -29,16 +33,39 @@ class UserService
 
     }
 
+    /**
+     * @param $userId
+     * @return array
+     */
     public function getBuddyNumbers($userId)
     {
         return $this->getUserNumberMapper()->readByUserId($userId);
     }
+
 
     public function deleteOldNumbers()
     {
         foreach ($this->getUserNumberMapper()->getUsers() as $user) {
             $this->getUserNumberMapper()->deleteByUserId($user['id'], 30);
         }
+    }
+
+    /**
+     * @param $userId
+     * @param $number
+     * @param $buddy
+     * @return bool
+     */
+    public function checkUserBuddy($userId, $number, $buddy)
+    {
+        if (empty($number) || empty($buddy)) {
+            throw new \Exception("Invalid Number or Buddy");
+        }
+        $result = $this->getUserNumberMapper()->checkUserBuddy($userId, $number, $buddy);
+        if($result == 0){
+            return false;
+        }
+        return true;
     }
 
     private function getPdo()
