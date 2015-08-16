@@ -3,7 +3,8 @@
 use Mapper\UserNumberMapper;
 use Number\Number;
 
-class UserNumberMapperTest extends PHPUnit_Framework_TestCase{
+class UserNumberMapperTest extends PHPUnit_Framework_TestCase
+{
 
     /**
      * @var UserNumberMapper
@@ -18,7 +19,7 @@ class UserNumberMapperTest extends PHPUnit_Framework_TestCase{
 
     public function testCreate()
     {
-        $result = $this->userNumberMapper->create(1,1);
+        $result = $this->userNumberMapper->create(1, 1);
         $this->assertTrue($result);
     }
 } 

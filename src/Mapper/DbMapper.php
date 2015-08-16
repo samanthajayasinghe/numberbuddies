@@ -4,7 +4,8 @@ namespace Mapper;
 
 use \PDO;
 
-class DbMapper {
+class DbMapper
+{
 
     /**
      * @var PDO

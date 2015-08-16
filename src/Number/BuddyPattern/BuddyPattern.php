@@ -32,7 +32,7 @@ abstract class BuddyPattern
      */
     protected function validateIndent($indent)
     {
-        if($indent<1){
+        if ($indent < 1) {
             throw new \Exception("Invalid Indent");
         }
     }

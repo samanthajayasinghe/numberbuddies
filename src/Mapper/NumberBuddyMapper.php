@@ -4,7 +4,8 @@ namespace Mapper;
 
 use Number\Number;
 
-class NumberBuddyMapper extends DbMapper{
+class NumberBuddyMapper extends DbMapper
+{
 
     /**
      * @param Number $number
@@ -13,8 +14,9 @@ class NumberBuddyMapper extends DbMapper{
     {
         $sql = "INSERT INTO number_buddy(number_value,buddy_list) VALUES( :number,:buddies)";
 
-        $query = $this->getPdo()->prepare($sql);
-        return $query->execute([':number'=>$number->getValue(),':buddies' =>json_encode($number->getBuddies())]);
+        $statement = $this->getPdo()->prepare($sql);
+        $statement->execute([':number' => $number->getValue(), ':buddies' => json_encode($number->getBuddies())]);
+
     }
 
     /**
@@ -25,8 +27,7 @@ class NumberBuddyMapper extends DbMapper{
         $sql = "SELECT * FROM number_buddy WHERE number_value = ?";
         $query = $this->getPdo()->prepare($sql);
         $query->execute([$number->getValue()]);
-        if($query->rowCount() == 0)
-        {
+        if ($query->rowCount() == 0) {
             return false;
         }
         return $query->fetch();

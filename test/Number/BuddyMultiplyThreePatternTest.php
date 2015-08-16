@@ -3,7 +3,8 @@
 use Number\BuddyPattern\MultiplyThree;
 use Number\Number;
 
-class BuddyMultiplyThreePatternTest extends PHPUnit_Framework_TestCase{
+class BuddyMultiplyThreePatternTest extends PHPUnit_Framework_TestCase
+{
 
     private $multiplyThree = null;
 
@@ -14,8 +15,8 @@ class BuddyMultiplyThreePatternTest extends PHPUnit_Framework_TestCase{
 
     public function testCalculateBuddy()
     {
-        $result = $this->multiplyThree->getBuddy(new Number(5),3);
-        $this->assertEquals(18,$result);
+        $result = $this->multiplyThree->getBuddy(new Number(5), 3);
+        $this->assertEquals(18, $result);
     }
 
     /**
@@ -23,7 +24,7 @@ class BuddyMultiplyThreePatternTest extends PHPUnit_Framework_TestCase{
      */
     public function testCalculateBuddyEmptyIndent()
     {
-        $this->multiplyThree->getBuddy(new Number(5),0);
+        $this->multiplyThree->getBuddy(new Number(5), 0);
 
     }
 

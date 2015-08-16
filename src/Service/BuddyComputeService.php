@@ -35,9 +35,14 @@ class BuddyComputeService
     /**
      * @param Number $number
      * @return array
+     * @throws \Exception
      */
     public function generateBuddies(Number $number)
     {
+        if ($number->getValue() <= 0) {
+            throw new \Exception("Invalid Number");
+        }
+
         $buddies = [];
 
         for ($i = 1; $i <= $number->getValue(); $i++) {

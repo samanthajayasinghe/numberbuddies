@@ -4,7 +4,8 @@ namespace Number\BuddyPattern;
 
 use Number\Number;
 
-class MultiplyThreeAndFive extends BuddyPattern{
+class MultiplyThreeAndFive extends BuddyPattern
+{
 
     /**
      * @param Number $number

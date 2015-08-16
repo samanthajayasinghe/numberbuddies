@@ -2,7 +2,8 @@
 namespace Number;
 
 
-class Number {
+class Number
+{
 
     /**
      * @var int
@@ -63,7 +64,9 @@ class Number {
     public function getBuddies()
     {
         return $this->buddies;
-    }/**
+    }
+
+    /**
      * @param array $buddies
      * @return $this;
      */
