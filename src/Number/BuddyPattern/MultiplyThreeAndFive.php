@@ -13,6 +13,6 @@ class MultiplyThreeAndFive extends BuddyPattern{
      */
     protected function calculateBuddy(Number $number, $indent)
     {
-        return $indent + ($indent * 3 * 5 * $number->getRoundedSquareRoot()) + 2;
+        return (int)($indent + ($indent * 3 * 5 * $number->getRoundedSquareRoot()) + 2);
     }
 } 

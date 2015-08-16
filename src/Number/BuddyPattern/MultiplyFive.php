@@ -14,6 +14,6 @@ class MultiplyFive extends BuddyPattern{
      */
     protected function calculateBuddy(Number $number, $indent)
     {
-        return $indent + ($indent * $number->getRoundedSquareRoot()) + 1;
+        return (int)($indent + ($indent * $number->getRoundedSquareRoot()) + 1);
     }
 } 
