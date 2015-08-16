@@ -5,4 +5,4 @@ How to Install
  2. Change config.php file for db access
 
 How to handle big int
- If it's big int then it's better to use BC Math(http://php.net/manual/en/ref.bc.php)
+ 1. If it's big int then it's better to use BC Math(http://php.net/manual/en/ref.bc.php)
